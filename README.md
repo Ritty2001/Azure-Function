@@ -18,8 +18,10 @@ The word “Sample” Mentioned in bold will be the name of the Blob container c
 Login to azure in your terminal using az login and input the credentials
 
 Create the resource group + storage account (Replace <unique> with random string of characters since storage account names are globally unique or just use any random globally unique name)
+      
       az group create --name func-demo-rg --location eastus
-      az storage account create --name funcdemostorage<unique> --location eastus --         resource-group func-demo-rg --sku Standard_LRS
+      az storage account create --name funcdemostorage<unique> --location eastus 
+      --resource-group func-demo-rg --sku Standard_LRS
 
 Create the Function App (Replace <unique> with random string of characters since Function App names are globally unique or just use any random globally unique name). We are creating a python function with runtime version 3.11
 
