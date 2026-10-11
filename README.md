@@ -25,20 +25,23 @@ Create the resource group + storage account (Replace <unique> with random string
 
 Create the Function App (Replace <unique> with random string of characters since Function App names are globally unique or just use any random globally unique name). We are creating a python function with runtime version 3.11
 
-az functionapp create --resource-group func-demo-rg --consumption-plan-location eastus \
-  --runtime python --runtime-version 3.11 --functions-version 4 \
-  --name func-demo-app<unique> --storage-account funcdemostorage<unique>
+      az functionapp create --resource-group func-demo-rg --consumption-plan-location eastus \
+        --runtime python --runtime-version 3.11 --functions-version 4 \
+        --name func-demo-app<unique> --storage-account funcdemostorage<unique>
 
-3. Write the HTTP trigger function locally using Core Tools
+Write the HTTP trigger function locally using Core Tools
 Install Core Tools (if not already)
-npm install -g azure-functions-core-tools@4 --unsafe-perm true
+
+            npm install -g azure-functions-core-tools@4 --unsafe-perm true
 
 Verify:
-Func –version
+
+      Func –version
 
 Initialize the project
-func init FuncDemoProject --python
-cd <foldername>
+
+      func init FuncDemoProject --python
+      cd <foldername>
 
 Check local.settings.json — v2 projects should have:
 "AzureWebJobsFeatureFlags": "EnableWorkerIndexing"
