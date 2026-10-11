@@ -15,7 +15,7 @@ The word “Sample” Mentioned in bold will be the name of the Blob container c
 
 **Steps**
 
-Login to azure in your terminal using az login and input the credentials
+Login to azure in your terminal using az login and input the credentials.
 
 Create the resource group + storage account (Replace <unique> with random string of characters since storage account names are globally unique or just use any random globally unique name)
       
