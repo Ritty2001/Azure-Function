@@ -1,8 +1,8 @@
 ## HTTP-triggered Azure Function + Blob Storage
 
-What we are building: An HTTP-triggered function that receives a name via query string, generates a text file, and saves it to Blob Storage.
+**What we are building:** An HTTP-triggered function that receives a name via query string, generates a text file, and saves it to Blob Storage.
 
-How we are doing it:
+**How we are doing it:**
 We create a resource group and storage account
 Create the function app 
 Program a function in the function app which automatically creates a text file in a specified blob container when you give a name in the query HTTP String. We are using a method called “core tools” which is a module that must be installed in our local system that helps us code Azure functions.
