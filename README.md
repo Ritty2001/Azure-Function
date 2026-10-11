@@ -1,4 +1,4 @@
-##HTTP-triggered Azure Function + Blob Storage
+## HTTP-triggered Azure Function + Blob Storage
 
 What we are building: An HTTP-triggered function that receives a name via query string, generates a text file, and saves it to Blob Storage.
 
