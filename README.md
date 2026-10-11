@@ -47,25 +47,32 @@ Check local.settings.json — v2 projects should have:
 "AzureWebJobsFeatureFlags": "EnableWorkerIndexing"
 This flag is what tells Functions to use the decorator-based v2 model. If it's missing, add it.
 You'll now have a single function_app.py at the root instead of per-function folders.
-3. Create the HTTP trigger function
-func new --name HttpToBlob --template "HTTP trigger" --authlevel "function"
-It appends a decorated function block directly into function_app.py.
+
+
+Create the HTTP trigger function
+
+      func new --name HttpToBlob --template "HTTP trigger" --authlevel "function"
+      It appends a decorated function block directly into function_app.py.
 
 Write the function with a Blob output binding (decorator-based)
 This function code is available at function_app.py
 
-5. Create the container it writes to
-az storage container create --name demo-container --account-name funcdemostorage<unique>
+Create the container it writes to
+
+       az storage container create --name demo-container --account-name funcdemostorage<unique>
 
 
-6. Deploy the function App
-func azure functionapp publish func-demo-app<unique>
+Deploy the function App
+   
+            func azure functionapp publish func-demo-app<unique>
 
 Get the key:
-az functionapp function keys list --name func-demo-app<unique> --resource-group func-demo-rg --function-name HttpToBlob
 
-8. Test the deployed version
-curl.exe "https://func-demo-app<unique>.azurewebsites.net/api/HttpToBlob?code=<function-key>&name=Sample"
+      az functionapp function keys list --name func-demo-app<unique> --resource-group func-demo-rg --function-name HttpToBlob
+
+Test the deployed version
+   
+      curl.exe "https://func-demo-app<unique>.azurewebsites.net/api/HttpToBlob?code=<function-key>&name=Sample"
 
 This will create a blob called “Sample” in the created storage container in that particular storage account.
 
