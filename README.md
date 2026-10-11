@@ -9,10 +9,11 @@ Program a function in the function app which automatically creates a text file i
 We need to create a blob container and specify it so the Azure function knows which blob the text file needs to be created under.
 We deploy the function app in Azure.
 Then we give a CURL command to test the deployed version with the below URL. The API key can be obtained by the command mentioned in the steps in the later part of the doc.
+
 Eg. When we query: "https://func-demo-app<unique>.azurewebsites.net/api/HttpToBlob?code=<function-key>&name=Sample"
 The word “Sample” Mentioned in bold will be the name of the Blob container created by the function.
 
-Steps
+**Steps**
 
 Login to azure in your terminal using az login and input the credentials
 
